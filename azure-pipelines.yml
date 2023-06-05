@@ -16,11 +16,11 @@ jobs:
       packageType: 'sdk'
       version: '2.2.401'
   - script: dotnet build ./SimplCommerce.sln
-    displayName: 'dotnet build'
+    displayName: 'Dotnet build'
   - task: PowerShell@2
     inputs:
       filePath: .\run-tests.ps1
-    displayName: 'run tests'
+    displayName: 'Run tests'
   - task: PublishTestResults@2
     displayName: 'Publish Test Results **/*.trx'
     condition: succeededOrFailed()
